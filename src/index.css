@@ -24,24 +24,20 @@ body {
 .container {
   max-width: 80rem;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4.8rem;
 }
 
-/* *************** */
+/* *************** HEADER *************** */
 
 .header {
   align-self: stretch;
 }
 
 .header h1 {
-  /* Non-accessible color */
   color: #edc84b;
-  /* color: #af8602; */
-
   text-transform: uppercase;
   text-align: center;
   font-size: 5.2rem;
@@ -70,8 +66,6 @@ body {
 .header h1::after {
   right: 0;
 }
-
-/* *************** */
 
 .menu {
   display: flex;
@@ -149,8 +143,6 @@ body {
   opacity: 0.8;
 }
 
-/* *************** */
-
 .footer {
   font-size: 1.4rem;
 }
@@ -178,10 +170,46 @@ body {
   background-color: #e9bb24;
 }
 
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
+/* Tablets and small desktops */
+@media (max-width: 900px) {
+  .header h1 {
+    font-size: 4.4rem;
+  }
 
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
-*/
+  .header h1::before,
+  .header h1::after {
+    width: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .header h1 {
+    font-size: 3.2rem;
+  }
+
+  .header h1::before,
+  .header h1::after {
+    display: none;
+  }
+
+  .pizzas {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+
+  .pizza {
+    gap: 2rem;
+  }
+
+  .pizza img {
+    width: 10rem;
+  }
+
+  .menu > p {
+    width: 100%;
+  }
+}
